@@ -1,6 +1,6 @@
 <?php
 $finder = PhpCsFixer\Finder::create()
-    ->in(__DIR__ . '/files/')
+    ->in(__DIR__ . '/files/');
 
 return (new PhpCsFixer\Config())
     ->setRiskyAllowed(true)

@@ -21,7 +21,7 @@ final class CountryHandler extends SingletonFactory
 
     /**
      * Returns an array of country flags.
-     * 
+     *
      * @return array<string, CountryItem>
      */
     public function getCountries(): array

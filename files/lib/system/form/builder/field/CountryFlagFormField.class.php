@@ -21,11 +21,12 @@ final class CountryFlagFormField extends AbstractFormField implements IImmutable
     use TImmutableFormField;
 
     protected $javaScriptDataHandlerModule = 'Sonlong/CountryFlags/Form/Builder/Field/CountryFlag';
+
     protected $templateName = 'shared_countryFlagFormField';
 
     /**
      * Returns an array of country flags.
-     * 
+     *
      * @return array<string, CountryItem>
      */
     public function getCountries(): array
@@ -43,7 +44,7 @@ final class CountryFlagFormField extends AbstractFormField implements IImmutable
     public function readValue(): static
     {
         if ($this->getDocument()->hasRequestData($this->getPrefixedId())) {
-            $this->value = (string) $this->getDocument()->getRequestData($this->getPrefixedId());
+            $this->value = (string)$this->getDocument()->getRequestData($this->getPrefixedId());
 
             if (!$this->isRequired() && !$this->value) {
                 $this->value = null;
