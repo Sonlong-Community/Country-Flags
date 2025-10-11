@@ -1,12 +1,9 @@
 <?php
 
-namespace formulaone\system\form\builder\field;
+namespace wcf\system\form\builder\field;
 
 use wcf\system\country\CountryHandler;
 use wcf\system\country\CountryItem;
-use wcf\system\form\builder\field\AbstractFormField;
-use wcf\system\form\builder\field\IImmutableFormField;
-use wcf\system\form\builder\field\TImmutableFormField;
 use wcf\system\form\builder\field\validation\FormFieldValidationError;
 
 /**
