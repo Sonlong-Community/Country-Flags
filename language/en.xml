@@ -252,5 +252,9 @@
 			<item name="wcf.country.flag.zm"><![CDATA[Zambia]]></item>
 			<item name="wcf.country.flag.zw"><![CDATA[Zimbabwe]]></item>
 		</category>
+
+		<category name="wcf.global">
+			<item name="wcf.global.country.noSelection"><![CDATA[No Selection]]></item>
+		</category>
 	</import>
 </language>
