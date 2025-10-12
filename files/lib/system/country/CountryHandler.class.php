@@ -41,5 +41,9 @@ final class CountryHandler extends SingletonFactory
     protected function init(): void
     {
         $this->countries = CountryCacheBuilder::getInstance()->getData();
+
+        uasort($this->countries, function (CountryItem $a, CountryItem $b) {
+            return \strcasecmp($a->getCountryName(), $b->getCountryName());
+        });
     }
 }
