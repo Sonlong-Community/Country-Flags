@@ -42,7 +42,7 @@ final class CountryHandler extends SingletonFactory
     {
         $this->countries = CountryCacheBuilder::getInstance()->getData();
 
-        uasort($this->countries, function (CountryItem $a, CountryItem $b) {
+        \uasort($this->countries, static function (CountryItem $a, CountryItem $b) {
             return \strcasecmp($a->getCountryName(), $b->getCountryName());
         });
     }

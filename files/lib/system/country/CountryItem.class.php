@@ -15,7 +15,8 @@ final class CountryItem
 {
     public function __construct(
         private readonly string $countryCode
-    ) {}
+    ) {
+    }
 
     /**
      * Returns the country code.
