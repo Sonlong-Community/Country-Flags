@@ -15,8 +15,7 @@ final class CountryItem
 {
     public function __construct(
         private readonly string $countryCode
-    ) {
-    }
+    ) {}
 
     /**
      * Returns the country code.
@@ -31,7 +30,13 @@ final class CountryItem
      */
     public function getCountryName(): string
     {
-        return WCF::getLanguage()->get(\sprintf('wcf.country.flag.%s', $this->countryCode));
+        return \Locale::getDisplayRegion(
+            \sprintf(
+                '-%s',
+                \strtoupper($this->countryCode)
+            ),
+            WCF::getLanguage()->getLocale(),
+        );
     }
 
     /**

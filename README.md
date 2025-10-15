@@ -7,7 +7,6 @@ This plugin provides a comprehensive collection of country flags in SVG format. 
 ## Features
 - Over 200 country flags as SVG files
 - Easy integration into your own projects
-- Multilingual support (German, English)
 
 ## Usage Examples (WoltLab Suite Core)
 
@@ -99,7 +98,7 @@ Template usage for a single country (if `$country` is assigned):
 - `CountryHandler::getInstance()->getCountries(): array<string, CountryItem>`
 - `CountryHandler::getInstance()->getCountry(string $code): ?CountryItem`
 - `CountryItem::getCountryCode(): string`
-- `CountryItem::getCountryName(): string` (language-dependent name via language variables `wcf.country.flag.<code>`)
+- `CountryItem::getCountryName(): string`
 - `CountryItem::getFilePath(): string` (path to the SVG file, e.g., `wcf/images/country/flags/de.svg`)
 
 Notes:
