@@ -45,7 +45,7 @@ final class CountryItem
     public function getFilePath(): string
     {
         return \sprintf(
-            '%s/images/country/flags/%s.svg',
+            '%simages/country/flags/%s.svg',
             RELATIVE_WCF_DIR,
             $this->countryCode
         );
