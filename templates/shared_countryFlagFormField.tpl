@@ -12,23 +12,16 @@
 
 <script data-relocate="true">
 	require(['Sonlong/CountryFlags/Chooser', 'WoltLabSuite/Core/Dom/Traverse', 'WoltLabSuite/Core/Dom/Util'],
-	function({ setup, setCountryCode }, { childByTag }, { identify }) {
-		var countries = {
-			{implode from=$field->getCountries() item='country'}
-			'{$country->getCountryCode()}': {
-			countryName: '{$country->getCountryName()|encodeJS}',
-			iconPath: '{unsafe:$country->getFilePath()|encodeJS}',
-		}
-		{/implode}
-	};
+		function({ setup }, { childByTag }, { identify }) {
+			var countries = {unsafe:$field->getCountriesJSON()}
 
-	setup(
-		identify(childByTag(elById('{unsafe:$field->getPrefixedId()|encodeJS}Container'), 'DD')),
-		'{unsafe:$field->getPrefixedId()|encodeJS}',
-		'{if $field->getValue()}{$field->getValue()}{/if}',
-		countries,
-		undefined,
-		{if !$field->isRequired()}true{else}false{/if}
-	)
-	});
+			setup(
+				identify(childByTag(elById('{unsafe:$field->getPrefixedId()|encodeJS}Container'), 'DD')),
+				'{unsafe:$field->getPrefixedId()|encodeJS}',
+				'{if $field->getValue()}{$field->getValue()}{/if}',
+				countries,
+				undefined,
+				{if !$field->isRequired()}true{else}false{/if}
+			)
+		});
 </script>

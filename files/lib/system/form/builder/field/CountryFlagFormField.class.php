@@ -5,6 +5,7 @@ namespace wcf\system\form\builder\field;
 use wcf\system\country\CountryHandler;
 use wcf\system\country\CountryItem;
 use wcf\system\form\builder\field\validation\FormFieldValidationError;
+use wcf\util\JSON;
 
 /**
  * Implementation of a form field for selecting a country flag.
@@ -29,6 +30,24 @@ final class CountryFlagFormField extends AbstractFormField implements IImmutable
     public function getCountries(): array
     {
         return CountryHandler::getInstance()->getCountries();
+    }
+
+    /**
+     * Returns a JSON-encoded array of country flags.
+     *
+     * The array contains the country code as key and an array with 'countryName' and 'iconPath' as value.
+     */
+    public function getCountriesJSON(): string
+    {
+        $countries = [];
+        foreach ($this->getCountries() as $code => $country) {
+            $countries[$country->getCountryCode()] = [
+                'countryName' => $country->getCountryName(),
+                'iconPath' => $country->getFilePath(),
+            ];
+        }
+
+        return JSON::encode($countries);
     }
 
     #[\Override]
