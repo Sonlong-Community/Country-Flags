@@ -51,12 +51,13 @@ define(["require", "exports", "WoltLabSuite/Core/Language", "WoltLabSuite/Core/D
         }
         const icon = document.createElement("fa-icon");
         icon.setIcon("caret-down", true);
+        const fragment = document.createDocumentFragment();
         Object.entries(countries).forEach(([code, country]) => {
             const listItem = document.createElement("li");
             listItem.className = "boxFlage";
             listItem.addEventListener("click", callbackClick);
             listItem.dataset.countryCode = code;
-            dropdownMenu.appendChild(listItem);
+            fragment.appendChild(listItem);
             const link = document.createElement("a");
             link.className = "box24";
             link.href = "#";
@@ -81,11 +82,11 @@ define(["require", "exports", "WoltLabSuite/Core/Language", "WoltLabSuite/Core/D
         if (allowEmptyValue) {
             const divider = document.createElement("li");
             divider.className = "dropdownDivider";
-            dropdownMenu.appendChild(divider);
+            fragment.appendChild(divider);
             const listItem = document.createElement("li");
             listItem.dataset.countryCode = "";
             listItem.addEventListener("click", callbackClick);
-            dropdownMenu.appendChild(listItem);
+            fragment.appendChild(listItem);
             const link = document.createElement("a");
             link.textContent = (0, Language_1.getPhrase)("formulaone.global.country.noSelection");
             listItem.appendChild(link);
@@ -107,6 +108,7 @@ define(["require", "exports", "WoltLabSuite/Core/Language", "WoltLabSuite/Core/D
             span.append(icon);
             div.appendChild(span);
         }
+        dropdownMenu.appendChild(fragment);
         (0, Simple_1.init)(dropdownToggle);
         _choosers.set(chooserId, {
             callback,

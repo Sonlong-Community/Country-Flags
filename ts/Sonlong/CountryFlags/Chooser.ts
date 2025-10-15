@@ -67,12 +67,14 @@ function initElement(
   const icon = document.createElement("fa-icon");
   icon.setIcon("caret-down", true);
 
+  const fragment = document.createDocumentFragment();
+
   Object.entries(countries).forEach(([code, country]) => {
     const listItem = document.createElement("li");
     listItem.className = "boxFlage";
     listItem.addEventListener("click", callbackClick);
     listItem.dataset.countryCode = code;
-    dropdownMenu.appendChild(listItem);
+    fragment.appendChild(listItem);
 
     const link = document.createElement("a");
     link.className = "box24";
@@ -102,12 +104,12 @@ function initElement(
   if (allowEmptyValue) {
     const divider = document.createElement("li");
     divider.className = "dropdownDivider";
-    dropdownMenu.appendChild(divider);
+    fragment.appendChild(divider);
 
     const listItem = document.createElement("li");
     listItem.dataset.countryCode = "";
     listItem.addEventListener("click", callbackClick);
-    dropdownMenu.appendChild(listItem);
+    fragment.appendChild(listItem);
 
     const link = document.createElement("a");
     link.textContent = getPhrase("formulaone.global.country.noSelection");
@@ -133,6 +135,8 @@ function initElement(
     span.append(icon);
     div.appendChild(span);
   }
+
+  dropdownMenu.appendChild(fragment);
 
   initDropdownSimple(dropdownToggle);
 
