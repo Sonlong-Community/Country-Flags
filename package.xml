@@ -17,6 +17,10 @@
 	<requiredpackages>
 		<requiredpackage minversion="6.0.0">com.woltlab.wcf</requiredpackage>
 	</requiredpackages>
+	
+	<excludedpackages>
+		<excludedpackage version="6.3.0 Alpha 1">com.woltlab.wcf</excludedpackage>
+	</excludedpackages>
 
 	<instructions type="install">
 		<instruction type="file" />
