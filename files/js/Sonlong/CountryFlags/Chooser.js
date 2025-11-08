@@ -88,7 +88,7 @@ define(["require", "exports", "WoltLabSuite/Core/Language", "WoltLabSuite/Core/D
             listItem.addEventListener("click", callbackClick);
             fragment.appendChild(listItem);
             const link = document.createElement("a");
-            link.textContent = (0, Language_1.getPhrase)("formulaone.global.country.noSelection");
+            link.textContent = (0, Language_1.getPhrase)("wcf.global.country.noSelection");
             listItem.appendChild(link);
             if (countryCode === "") {
                 dropdownToggle.innerHTML = link.innerHTML;
@@ -104,7 +104,7 @@ define(["require", "exports", "WoltLabSuite/Core/Language", "WoltLabSuite/Core/D
             icon.setIcon("question");
             div.appendChild(icon);
             const span = document.createElement("span");
-            span.textContent = (0, Language_1.getPhrase)("formulaone.global.country.noSelection");
+            span.textContent = (0, Language_1.getPhrase)("wcf.global.country.noSelection");
             span.append(icon);
             div.appendChild(span);
         }

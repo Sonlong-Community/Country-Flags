@@ -112,7 +112,7 @@ function initElement(
     fragment.appendChild(listItem);
 
     const link = document.createElement("a");
-    link.textContent = getPhrase("formulaone.global.country.noSelection");
+    link.textContent = getPhrase("wcf.global.country.noSelection");
     listItem.appendChild(link);
 
     if (countryCode === "") {
@@ -131,7 +131,7 @@ function initElement(
     div.appendChild(icon);
 
     const span = document.createElement("span");
-    span.textContent = getPhrase("formulaone.global.country.noSelection");
+    span.textContent = getPhrase("wcf.global.country.noSelection");
     span.append(icon);
     div.appendChild(span);
   }
