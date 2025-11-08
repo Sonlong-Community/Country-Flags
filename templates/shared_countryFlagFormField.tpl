@@ -13,6 +13,8 @@
 <script data-relocate="true">
 	require(['Sonlong/CountryFlags/Chooser', 'WoltLabSuite/Core/Dom/Traverse', 'WoltLabSuite/Core/Dom/Util'],
 		function({ setup }, { childByTag }, { identify }) {
+			{jsphrase name='wcf.global.country.noSelection'}
+
 			var countries = {unsafe:$field->getCountriesJSON()}
 
 			setup(

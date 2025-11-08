@@ -36,5 +36,6 @@
 
 	<instructions type="update" fromversion="1.0.3">
 		<instruction type="file" />
+		<instruction type="template" />
 	</instructions>
 </package>
