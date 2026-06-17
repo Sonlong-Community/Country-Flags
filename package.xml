@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package name="de.sonlong-community.country.flags" xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/6.0/package.xsd">
+<package name="de.sonlong-community.country.flags" xmlns="http://www.woltlab.com"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/6.0/package.xsd">
 	<packageinformation>
 		<packagename>[Developer] Country Flags</packagename>
 		<packagedescription>Country flags with associated language variables</packagedescription>
 		<packagename language="de">[Entwickler] Länderflaggen</packagename>
 		<packagedescription language="de">Länderflagen mit zugehörigen Sprachvariablen</packagedescription>
-		<version>1.0.4</version>
-		<date>2025-11-08</date>
+		<version>2.0.0</version>
+		<date>2026-06-17</date>
 	</packageinformation>
 
 	<authorinformation>
@@ -15,9 +17,9 @@
 	</authorinformation>
 
 	<requiredpackages>
-		<requiredpackage minversion="6.0.0">com.woltlab.wcf</requiredpackage>
+		<requiredpackage minversion="6.2.0">com.woltlab.wcf</requiredpackage>
 	</requiredpackages>
-	
+
 	<excludedpackages>
 		<excludedpackage version="7.0.0 Alpha 1">com.woltlab.wcf</excludedpackage>
 	</excludedpackages>
@@ -28,14 +30,7 @@
 		<instruction type="language" />
 	</instructions>
 
-	<instructions type="update" fromversion="1.0.2">
+	<instructions type="update" fromversion="1.0.4">
 		<instruction type="file" />
-		<instruction type="template" />
-		<instruction type="language" />
-	</instructions>
-
-	<instructions type="update" fromversion="1.0.3">
-		<instruction type="file" />
-		<instruction type="template" />
 	</instructions>
 </package>
