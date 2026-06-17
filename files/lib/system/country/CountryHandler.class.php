@@ -2,7 +2,7 @@
 
 namespace wcf\system\country;
 
-use wcf\system\cache\builder\CountryCacheBuilder;
+use wcf\system\cache\eager\CountryCache;
 use wcf\system\SingletonFactory;
 
 /**
@@ -40,7 +40,7 @@ final class CountryHandler extends SingletonFactory
     #[\Override]
     protected function init(): void
     {
-        $this->countries = CountryCacheBuilder::getInstance()->getData();
+        $this->countries = (new CountryCache())->getCache();
 
         \uasort($this->countries, static function (CountryItem $a, CountryItem $b) {
             return \strcasecmp($a->getCountryName(), $b->getCountryName());

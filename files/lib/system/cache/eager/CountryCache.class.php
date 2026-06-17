@@ -1,26 +1,28 @@
 <?php
 
-namespace wcf\system\cache\builder;
+namespace wcf\system\cache\eager;
 
 use wcf\system\country\CountryItem;
 
 /**
- * Builds the cache for country items.
+ * Eager cache implementation for country items.
  *
  * @author Stefan Larisch <Sonlong>, Marco Daries <xDeraiser>
  * @copyright 2002-2025 Sonlong-Community
  * @license MIT License <https://opensource.org/licenses/MIT>
+ *
+ * @extends AbstractEagerCache<array<string, CountryItem>>
  */
-final class CountryCacheBuilder extends AbstractCacheBuilder
+final class CountryCache extends AbstractEagerCache
 {
     #[\Override]
-    public function rebuild(array $parameters): array
+    protected function getCacheData(): array
     {
         $data = [];
 
         $flagPath = \sprintf('%s/images/country/flags', RELATIVE_WCF_DIR);
         $countryFlags = \array_map(
-            static fn (string $file): string => \pathinfo($file, \PATHINFO_FILENAME),
+            static fn(string $file): string => \pathinfo($file, \PATHINFO_FILENAME),
             \glob(\sprintf('%s/*.svg', $flagPath)) ?: []
         );
 
