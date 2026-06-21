@@ -15,8 +15,7 @@ final class CountryItem
 {
     public function __construct(
         private readonly string $countryCode
-    ) {
-    }
+    ) {}
 
     /**
      * Returns the country code.
@@ -48,6 +47,20 @@ final class CountryItem
         return \sprintf(
             '%simages/country/flags/%s.svg',
             RELATIVE_WCF_DIR,
+            $this->countryCode
+        );
+    }
+
+    /**
+     * Returns the URL for the country flag icon.
+     * 
+     * @since 1.0.5
+     */
+    public function getURL(): string
+    {
+        return \sprintf(
+            '%simages/country/flags/%s.svg',
+            WCF::getPath(),
             $this->countryCode
         );
     }
