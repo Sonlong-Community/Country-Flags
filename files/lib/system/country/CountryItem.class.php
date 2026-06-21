@@ -15,7 +15,8 @@ final class CountryItem
 {
     public function __construct(
         private readonly string $countryCode
-    ) {}
+    ) {
+    }
 
     /**
      * Returns the country code.
@@ -53,7 +54,7 @@ final class CountryItem
 
     /**
      * Returns the URL for the country flag icon.
-     * 
+     *
      * @since 1.0.5
      */
     public function getURL(): string

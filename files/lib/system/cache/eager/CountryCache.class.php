@@ -22,7 +22,7 @@ final class CountryCache extends AbstractEagerCache
 
         $flagPath = \sprintf('%s/images/country/flags', RELATIVE_WCF_DIR);
         $countryFlags = \array_map(
-            static fn(string $file): string => \pathinfo($file, \PATHINFO_FILENAME),
+            static fn (string $file): string => \pathinfo($file, \PATHINFO_FILENAME),
             \glob(\sprintf('%s/*.svg', $flagPath)) ?: []
         );
 
