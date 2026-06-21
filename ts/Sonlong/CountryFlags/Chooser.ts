@@ -183,8 +183,8 @@ function select(chooserId: ChooserId, countryCode: string, listItem?: HTMLElemen
   const chooser = _choosers.get(chooserId)!;
 
   if (listItem === undefined) {
-    listItem = Array.from(chooser.dropdownMenu.children).find((element: HTMLElement) => {
-      return element.dataset.countryCode === countryCode;
+    listItem = Array.from(chooser.dropdownMenu.children).find((element: Element) => {
+      return (element as HTMLElement).dataset.countryCode === countryCode;
     }) as HTMLElement;
 
     if (listItem === undefined) {
