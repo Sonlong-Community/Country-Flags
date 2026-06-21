@@ -1,6 +1,9 @@
 {
   "include": ["node_modules/@woltlab/d.ts/global.d.ts", "ts/**/*"],
   "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowJs": true,
     "target": "ES2022",
     "module": "amd",
     "rootDir": "ts/",
@@ -11,14 +14,15 @@
     "esModuleInterop": true,
     "noImplicitThis": true,
     "strictBindCallApply": true,
+    "importHelpers": true,
+    "newLine": "lf",
     "baseUrl": ".",
     "paths": {
       "*": ["node_modules/@woltlab/d.ts/*"]
     },
-    "importHelpers": true,
-    "newLine": "lf",
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "allowJs": true
+    "ignoreDeprecations": "6.0",
+    "strict": false,
+    "noUncheckedSideEffectImports": false,
+    "skipLibCheck": true
   }
 }
