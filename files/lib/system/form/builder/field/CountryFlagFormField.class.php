@@ -5,7 +5,6 @@ namespace wcf\system\form\builder\field;
 use wcf\system\country\CountryHandler;
 use wcf\system\country\CountryItem;
 use wcf\system\form\builder\field\validation\FormFieldValidationError;
-use wcf\util\JSON;
 
 /**
  * Implementation of a form field for selecting a country flag.
@@ -47,7 +46,7 @@ final class CountryFlagFormField extends AbstractFormField implements IImmutable
             ];
         }
 
-        return JSON::encode($countries);
+        return \json_encode($countries);
     }
 
     #[\Override]
