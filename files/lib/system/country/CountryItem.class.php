@@ -55,7 +55,7 @@ final class CountryItem
     /**
      * Returns the URL for the country flag icon.
      *
-     * @since 1.0.5
+     * @since 2.0.0
      */
     public function getURL(): string
     {
